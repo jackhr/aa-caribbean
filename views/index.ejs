@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/main-header') %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <title><%= title %></title>
-</head>
-
-<body>
   <main>
-    <h1>Welcome to <%= title %>.org</h1>
+    <h1>Welcome to AACaribbean.org</h1>
     <p>
       The A primary purpose of this web site is to provide information about Alcoholics Anonymous meetings and contacts
       in the Eastern Caribbean. This web site is a community service project supported by AA groups in the region.
@@ -20,11 +10,8 @@
       We welcome any updates or input on this site. Please send your information to <a
         href="mailto:info@aacaribbean.org">info@aacaribbean.org</a>
     </p>
-    <% islands.forEach(isl => { %>
-      <h1><%= isl.name %></h1>
-    <% }) %>
   </main>
 
-</body>
+  </body>
 
-</html>
+  </html>

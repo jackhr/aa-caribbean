@@ -12,7 +12,8 @@ router.get('/', async function (req, res) {
   });
   res.render('index', {
     title: "AACaribbean",
-    islands
+    islands,
+    island: {} // Defaults the HTML title to be "AACaribbean"
   });
 });
 
