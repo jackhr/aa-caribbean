@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title><%= island.name %></title>
+</head>
+
+<body>
+  <main>
+    <div class="island-header">
+      <img class="flag" src="/images/<%= island.flagKey %>" alt="The flag of <%= island.name %>">
+      <h1 class="island-name"><%= island.name %></h1>
+    </div>
+    <% if (island.info.length) { %>
+      <h2 class="island-info"><%= island.info %></h2>
+    <% } else if (island.aaGroups.length) { %>
+      <!-- <h2><%= island.name %> currently has <%= island.aaGroups.length %> groups.</h2> -->
+    <% } %>
+    <div class="website-link-div">
+      <% if (island.website.length) { %>
+        <span>
+          Up-to-date contact and meeting information can be found at 
+          <a target="_blank" href="<%= island.website %>"><%= island.website.slice(8) %></a>
+        </span>
+      <% } %>
+    </div>
+    <% if (!island.aaGroups.length) { %>
+      <% if (!island.website.length) { %>
+        <h2>Sorry, there is no information available at this time.</h2>
+      <% } %>
+    <% } else { %>
+      <div class="all-meetings-div">
+        <% island.aaGroups.forEach(g => { %>
+          <div class="meeting-div">
+            <h2 class="group-name"><%= g.name %></h2>
+            <% if (g.meetings.some(m => !m.openToPublic)) { %>
+              <p>Some of the meetings for this group are closed to the public.</p>
+            <% } %>
+            <div class="meeting-info-div">
+              <p><%- g.info %></p>
+              <% if (g.meetings.length) { %>
+                <div>
+                  <table>
+                    <thead>
+                      <th>Day</th>
+                      <th>Place</th>
+                      <th>Time</th>
+                      <th>O/C</th>
+                      <!-- <th style="<%= g.meetings.some(m => m.openToPublic) ? "border-right: none" : "" %>">Time</th> -->
+                      <!-- <%- g.meetings.some(m => !m.openToPublic) ? "<th>O/C</th>" : "" %> -->
+                    </thead>
+                    <tbody>
+                      <% g.meetings.forEach((m, idx) => { %>
+                        <tr>
+                          <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.day %></td>
+                          <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.place %></td>
+                          <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.time %></td>
+                          <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.openToPublic ? "Open" : "Closed" %></td>
+                          <!-- <td><%= g.meetings.some(m => !m.openToPublic) ? (m.openToPublic ? "Open" : "Closed") : "" %></td> -->
+                        </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              <% } else { %>
+                <div></div>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+</div>
+</body>
+
+</html>
