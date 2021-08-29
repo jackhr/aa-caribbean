@@ -28,10 +28,17 @@ a:active {
   display: none;
 }
 
-#hamburger-icon {
+.HBI {
   display: none;
   width  : 2rem;
   cursor : pointer;
+}
+
+#top-nav-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
 }
 
 nav,
@@ -51,9 +58,13 @@ nav {
   font-size       : 18px;
 }
 
-header>div {
-  /* Why is this not the same width as the nav bar? */
-  /* Update: to account for the padding given to the nav bar. */
+.open-menu {
+  width           : 250px;
+  display        : flex;
+}
+
+#ghost-div {
+  /* width is not the same the nav bar to account for the padding given to the nav bar. */
   width: 282px;
 }
 
@@ -187,7 +198,7 @@ h2 {
     display: flex !important;
   }
 
-  #hamburger-icon {
+  .HBI {
     display: none !important;
   }
 
@@ -195,7 +206,7 @@ h2 {
     width: 250px !important;
   }
 
-  header>div {
+  #ghost-div {
     width: 282px !important;
   }
 }
@@ -205,7 +216,7 @@ h2 {
     display: none;
   }
 
-  #hamburger-icon {
+  #HBI-open {
     display: inherit;
   }
 
@@ -213,7 +224,7 @@ h2 {
     width: inherit;
   }
 
-  header>div {
+  #ghost-div {
     width: 65px;
   }
 }

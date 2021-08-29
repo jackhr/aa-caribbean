@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script defer src="/javascripts/hamburgerMenu.js"></script>
   <title>
     <%= island.name || "AACariibean" %>
   </title>
@@ -15,9 +16,12 @@
   <div id="inner-body-div">
     <header>
       <nav>
-        <img id="hamburger-icon" src="/images/hamburger-icon-open.png" alt="Hamburger menu icon."/>
+        <img id="HBI-open" class="HBI" src="/images/HBI-open.png" alt="Hamburger menu icon."/>
         <div id="links-div">
-          <a href="/">Home</a>
+          <div id="top-nav-div">
+            <a href="/">Home</a>
+            <img id="HBI-close" class="HBI" src="/images/HBI-close.webp" alt="Hamburger menu icon."/>
+          </div>
           <% islands.forEach(isl=> { %>
             <a class="nav-link" href="/islands/<%= isl._id %>">
               <img class="nav-flag" src="/images/<%= isl.flagKey %>" alt="The flag of <%= island.name %>">
@@ -26,5 +30,5 @@
           <% }) %>
         </div>
       </nav>
-      <div></div>
+      <div id="ghost-div"></div>
     </header>
