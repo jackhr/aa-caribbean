@@ -13,14 +13,15 @@
 
 <body>
   <div id="inner-body-div">
-  <header>
-    <nav>
-      <a href="/">Home</a>
-      <% islands.forEach(isl=> { %>
-        <a class="nav-link" href="/islands/<%= isl._id %>">
-          <%= isl.name %>
-        </a>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <% islands.forEach(isl=> { %>
+          <a class="nav-link" href="/islands/<%= isl._id %>">
+            <img class="nav-flag" src="/images/<%= isl.flagKey %>" alt="The flag of <%= island.name %>">
+            <%= isl.name %>
+          </a>
         <% }) %>
-    </nav>
-    <div></div>
-  </header>
+      </nav>
+      <div></div>
+    </header>

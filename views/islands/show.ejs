@@ -30,9 +30,7 @@
               <p>Some of the meetings for this group are closed to the public.</p>
             <% } %>
             <div class="meeting-info-div">
-              <p><%- g.info %></p>
               <% if (g.meetings.length) { %>
-                <div>
                   <table>
                     <thead>
                       <th>Day</th>
@@ -54,7 +52,7 @@
                       <% }) %>
                     </tbody>
                   </table>
-                </div>
+                  <p><%- g.info %></p>
               <% } else { %>
                 <div></div>
               <% } %>

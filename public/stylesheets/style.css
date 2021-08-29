@@ -36,13 +36,13 @@ nav {
   height: 100%;
   background-color: rgb(162, 203, 250);
   padding: 0 16px;
-  width: 175px;
+  width: 250px;
   font-size: 18px;
 }
 
 header > div {
   /* Why is this not the same width as the nav bar? */ /* Update: to account for the padding given to the nav bar. */
-  width: 207px;
+  width: 282px;
 }
 
 img {
@@ -79,12 +79,13 @@ main {
   /* background: orange; */
   font-size: 18px;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 table {
-  width: 52.5%;
+  width: 900px;
   /* margin: 0 auto; */
-  table-layout: fixed;
+  /* table-layout: fixed; */
   /* background: tomato; */
   border-collapse: collapse;
 }
@@ -100,6 +101,7 @@ td {
 
 td, th {
   border: solid 1px black;
+  height: 50px;
 }
 
 th {
@@ -133,14 +135,20 @@ td:nth-of-type(4) {
 }
 
 .meeting-info-div {
-  display: flex;
+  /* display: flex;
+  flex-direction: column; */
+  /* background-color: #659637; */
+  width: min-content;
+  margin: 0 auto;
 }
 
 .meeting-info-div > p {
-  width: 40%;
   line-height: 1.6rem;
-  margin-right: 3rem;
   font-size: 1.3rem;
+  /* width: 800px; */
+  /* display: inline-block; */
+  text-align: left;
+  /* background-color: antiquewhite; */
 }
 
 .group-name {
@@ -154,4 +162,9 @@ h2 {
 
 .island-info {
   font-size: 32px;
+}
+
+.nav-flag {
+  max-width: 32px;
+  /* max-height: 1px; */
 }
