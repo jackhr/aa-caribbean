@@ -10,7 +10,6 @@ HBOpen.onclick = (evt) => {
   HBClose.style.display = "inherit";
   linksDivEl.style.display = "flex";
   evt.target.style.display = "none";
-
 }
 
 HBClose.onclick = (evt) => {
@@ -19,4 +18,15 @@ HBClose.onclick = (evt) => {
   HBOpen.style.display = "inherit";
   linksDivEl.style.display = "none";
   evt.target.style.display = "none";
+}
+
+
+window.onresize = (evt) => {
+  if (window.innerWidth >= 900) {
+    navEl.className = "";
+    HBClose.style.display = "none";
+    ghostDivEl.style.width = "65px";
+    HBOpen.style.display = "inherit";
+    linksDivEl.style.display = "none";
+  }
 }
