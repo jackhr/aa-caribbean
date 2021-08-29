@@ -1,8 +1,8 @@
 body {
-  padding: 0;
-  margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  text-align: left;
+  padding         : 0;
+  margin          : 0;
+  font            : 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align      : left;
   background-color: rgb(255, 254, 209);
 }
 
@@ -10,13 +10,14 @@ body {
   display: flex;
 }
 
-h1, nav {
+h1,
+nav {
   font-family: 'Montserrat', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color:rgb(21, 90, 106);
+  color          : rgb(21, 90, 106);
 }
 
 a:active {
@@ -27,21 +28,32 @@ a:active {
   display: none;
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  height: 100%;
-  background-color: rgb(162, 203, 250);
-  padding: 0 16px;
-  width: 250px;
-  font-size: 18px;
+#hamburger-icon {
+  display: none;
+  width  : 2rem;
+  cursor : pointer;
 }
 
-header > div {
-  /* Why is this not the same width as the nav bar? */ /* Update: to account for the padding given to the nav bar. */
+nav,
+nav>div {
+  display        : flex;
+  flex-direction : column;
+  height         : 100%;
+  justify-content: space-evenly;
+}
+
+nav {
+  position        : fixed;
+  align-items     : flex-start;
+  background-color: rgb(162, 203, 250);
+  padding         : 0 16px;
+  width           : 250px;
+  font-size       : 18px;
+}
+
+header>div {
+  /* Why is this not the same width as the nav bar? */
+  /* Update: to account for the padding given to the nav bar. */
   width: 282px;
 }
 
@@ -50,20 +62,20 @@ img {
 }
 
 main {
-  width: 100%;
+  width  : 100%;
   padding: 3rem 4rem;
 }
 
 .island-header {
-  display: flex;
-  /* align-items: baseline; */
-  align-items: flex-start;
-  margin-bottom: 60px;
+  display            : flex;
+  /* align-items     : baseline; */
+  align-items        : flex-start;
+  margin-bottom      : 60px;
   /* background-color: aqua; */
 }
 
 .island-name {
-  font-size: 60px;
+  font-size  : 60px;
   margin-left: 50px;
 }
 
@@ -77,16 +89,16 @@ main {
 
 .meeting-div {
   /* background: orange; */
-  font-size: 18px;
+  font-size    : 18px;
   margin-bottom: 50px;
-  text-align: center;
+  text-align   : center;
 }
 
 table {
-  width: 900px;
-  /* margin: 0 auto; */
+  width          : 900px;
+  /* margin      : 0 auto; */
   /* table-layout: fixed; */
-  /* background: tomato; */
+  /* background  : tomato; */
   border-collapse: collapse;
 }
 
@@ -95,32 +107,33 @@ table {
 } */
 
 td {
-  margin: 0 10px;
+  margin      : 0 10px;
   padding-left: 10px;
 }
 
-td, th {
+td,
+th {
   border: solid 1px black;
   height: 50px;
 }
 
 th {
-  border-top: none;
+  border-top  : none;
   padding-left: 10px;
-}  
+}
 
 th:nth-of-type(1) {
-  width: 15%;
+  width      : 15%;
   border-left: none;
-}  
+}
 
 th:nth-of-type(2) {
   width: 55%;
-}  
+}
 
 th:nth-of-type(4) {
   border-right: none;
-}  
+}
 
 td:nth-of-type(1) {
   border-left: none;
@@ -138,21 +151,21 @@ td:nth-of-type(4) {
   /* display: flex;
   flex-direction: column; */
   /* background-color: #659637; */
-  width: min-content;
+  width : min-content;
   margin: 0 auto;
 }
 
-.meeting-info-div > p {
-  line-height: 1.6rem;
-  font-size: 1.3rem;
-  /* width: 800px; */
-  /* display: inline-block; */
-  text-align: left;
+.meeting-info-div>p {
+  line-height        : 1.6rem;
+  font-size          : 1.3rem;
+  /* width           : 800px; */
+  /* display         : inline-block; */
+  text-align         : left;
   /* background-color: antiquewhite; */
 }
 
 .group-name {
-  color:rgb(48, 111, 157);
+  color    : rgb(48, 111, 157);
   font-size: 28px;
 }
 
@@ -166,5 +179,41 @@ h2 {
 
 .nav-flag {
   max-width: 32px;
-  /* max-height: 1px; */
+}
+
+@media only screen and (min-width: 900px) {
+
+  #links-div {
+    display: flex !important;
+  }
+
+  #hamburger-icon {
+    display: none !important;
+  }
+
+  nav {
+    width: 250px !important;
+  }
+
+  header>div {
+    width: 282px !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #links-div {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: inherit;
+  }
+
+  nav {
+    width: inherit;
+  }
+
+  header>div {
+    width: 65px;
+  }
 }

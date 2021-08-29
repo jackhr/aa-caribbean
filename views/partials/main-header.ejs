@@ -15,13 +15,16 @@
   <div id="inner-body-div">
     <header>
       <nav>
-        <a href="/">Home</a>
-        <% islands.forEach(isl=> { %>
-          <a class="nav-link" href="/islands/<%= isl._id %>">
-            <img class="nav-flag" src="/images/<%= isl.flagKey %>" alt="The flag of <%= island.name %>">
-            <%= isl.name %>
-          </a>
-        <% }) %>
+        <img id="hamburger-icon" src="/images/hamburger-icon-open.png" alt="Hamburger menu icon."/>
+        <div id="links-div">
+          <a href="/">Home</a>
+          <% islands.forEach(isl=> { %>
+            <a class="nav-link" href="/islands/<%= isl._id %>">
+              <img class="nav-flag" src="/images/<%= isl.flagKey %>" alt="The flag of <%= island.name %>">
+              <%= isl.name %>
+            </a>
+          <% }) %>
+        </div>
       </nav>
       <div></div>
     </header>
