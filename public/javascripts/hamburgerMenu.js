@@ -20,8 +20,7 @@ HBClose.onclick = (evt) => {
   evt.target.style.display = "none";
 }
 
-
-window.onresize = (evt) => {
+window.onresize = () => {
   if (window.innerWidth >= 900) {
     navEl.className = "";
     HBClose.style.display = "none";

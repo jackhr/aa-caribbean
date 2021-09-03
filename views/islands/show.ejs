@@ -44,7 +44,7 @@
                       <% g.meetings.forEach((m, idx) => { %>
                         <tr>
                           <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.day %></td>
-                          <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.place %></td>
+                          <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %> place"><%= m.place %></td>
                           <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.time %></td>
                           <td class="<%= idx === g.meetings.length-1 ? "bottom-td" : "" %>"><%= m.openToPublic ? "Open" : "Closed" %></td>
                           <!-- <td><%= g.meetings.some(m => !m.openToPublic) ? (m.openToPublic ? "Open" : "Closed") : "" %></td> -->

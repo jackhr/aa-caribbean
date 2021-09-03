@@ -35,10 +35,10 @@ a:active {
 }
 
 #top-nav-div {
-  display: flex;
+  display        : flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 5px 0;
+  align-items    : center;
+  margin         : 5px 0;
 }
 
 nav,
@@ -59,8 +59,8 @@ nav {
 }
 
 .open-menu {
-  width           : 250px;
-  display        : flex;
+  width  : 250px;
+  display: flex;
 }
 
 #ghost-div {
@@ -113,13 +113,13 @@ table {
   border-collapse: collapse;
 }
 
-/* th, tr {
-  height: fit-content;
-} */
+.place {
+  text-align: justify;
+}
 
 td {
-  margin      : 0 10px;
-  padding-left: 10px;
+  margin : 0 10px;
+  padding: 5px 10px;
 }
 
 td,
